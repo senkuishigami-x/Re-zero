@@ -1,0 +1,598 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="theme-color" content="#090b10">
+    <meta name="description"
+          content="Authority — an intelligent decision-making assistant that helps you understand situations, evaluate options, and make informed decisions.">
+
+    <title>AUTHORITY — Decision Intelligence</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="app-shell">
+
+        <!-- HEADER -->
+
+        <header class="topbar">
+
+            <a href="#" class="brand">
+                <span class="brand-symbol">A</span>
+
+                <span class="brand-text">
+                    <strong>AUTHORITY</strong>
+                    <small>DECISION INTELLIGENCE</small>
+                </span>
+            </a>
+
+            <div class="system-status">
+                <span class="status-dot"></span>
+                <span>STANDBY</span>
+            </div>
+
+        </header>
+
+
+        <!-- MAIN CONTENT -->
+
+        <main class="main-content">
+
+            <!-- INTRODUCTION -->
+
+            <section class="hero">
+
+                <div class="eyebrow">
+                    <span class="eyebrow-line"></span>
+                    YOUR PERSONAL DECISION ADVISOR
+                </div>
+
+                <h1>
+                    Think clearly.<br>
+                    <span>Choose deliberately.</span>
+                </h1>
+
+                <p class="hero-description">
+                    Every decision has consequences.
+                    Authority helps you understand the situation,
+                    explore possibilities, and evaluate what matters
+                    before you make your move.
+                </p>
+
+            </section>
+
+
+            <!-- DECISION FORM -->
+
+            <section class="panel decision-panel">
+
+                <div class="panel-heading">
+
+                    <div>
+                        <span class="section-index">01 / INPUT</span>
+                        <h2>Brief the system</h2>
+                    </div>
+
+                    <span class="panel-icon">↗</span>
+
+                </div>
+
+                <form id="decision-form">
+
+                    <div class="form-group">
+
+                        <label for="situation">
+                            WHAT'S THE SITUATION?
+                        </label>
+
+                        <textarea
+                            id="situation"
+                            name="situation"
+                            placeholder="Describe what's happening, what led to it, and why you're uncertain..."
+                            rows="5"
+                            required
+                        ></textarea>
+
+                        <div class="field-hint">
+                            <span>Be honest. Context matters.</span>
+                            <span id="situation-count">0 characters</span>
+                        </div>
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="goal">
+                            WHAT DO YOU WANT TO ACHIEVE?
+                        </label>
+
+                        <input
+                            type="text"
+                            id="goal"
+                            name="goal"
+                            placeholder="Your desired outcome, if you know it"
+                        >
+
+                        <div class="field-hint">
+                            It's okay if your goal isn't completely clear.
+                        </div>
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="constraints">
+                            WHAT ARE YOUR CONSTRAINTS?
+                        </label>
+
+                        <textarea
+                            id="constraints"
+                            name="constraints"
+                            placeholder="Time, money, responsibilities, risks, other people..."
+                            rows="3"
+                        ></textarea>
+
+                    </div>
+
+
+                    <!-- SITUATION CATEGORY -->
+
+                    <div class="form-group">
+
+                        <label for="category">
+                            SITUATION CATEGORY
+                        </label>
+
+                        <select id="category" name="category">
+
+                            <option value="automatic">
+                                Let Authority determine the category
+                            </option>
+
+                            <option value="education">
+                                Education & Career
+                            </option>
+
+                            <option value="relationships">
+                                Relationships & Social Life
+                            </option>
+
+                            <option value="money">
+                                Money & Resources
+                            </option>
+
+                            <option value="personal">
+                                Personal Growth
+                            </option>
+
+                            <option value="time">
+                                Time & Productivity
+                            </option>
+
+                            <option value="conflict">
+                                Conflict & Difficult Conversations
+                            </option>
+
+                            <option value="health">
+                                Health & Well-being
+                            </option>
+
+                            <option value="other">
+                                Something Else
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                    <!-- AVAILABLE CHOICES -->
+
+                    <div class="form-group">
+
+                        <div class="label-row">
+
+                            <label for="options">
+                                OPTIONS YOU'RE CONSIDERING
+                            </label>
+
+                            <span class="optional-label">OPTIONAL</span>
+
+                        </div>
+
+                        <textarea
+                            id="options"
+                            name="options"
+                            placeholder="Option A: Do this&#10;Option B: Do that&#10;Leave blank if you want Authority to explore alternatives."
+                            rows="4"
+                        ></textarea>
+
+                        <div class="field-hint">
+                            Already have options? Enter them.
+                            Otherwise, let Authority explore possibilities.
+                        </div>
+
+                    </div>
+
+
+                    <!-- PRIORITIES -->
+
+                    <div class="form-group">
+
+                        <label>
+                            WHAT MATTERS MOST?
+                        </label>
+
+                        <p class="input-description">
+                            Select the factors you want Authority
+                            to pay particular attention to.
+                        </p>
+
+                        <div class="priority-grid">
+
+                            <label class="priority-option">
+                                <input
+                                    type="checkbox"
+                                    name="priorities"
+                                    value="emotional"
+                                    checked
+                                >
+                                <span>Emotional well-being</span>
+                            </label>
+
+                            <label class="priority-option">
+                                <input
+                                    type="checkbox"
+                                    name="priorities"
+                                    value="practical"
+                                    checked
+                                >
+                                <span>Practical outcomes</span>
+                            </label>
+
+                            <label class="priority-option">
+                                <input
+                                    type="checkbox"
+                                    name="priorities"
+                                    value="longterm"
+                                    checked
+                                >
+                                <span>Long-term consequences</span>
+                            </label>
+
+                            <label class="priority-option">
+                                <input
+                                    type="checkbox"
+                                    name="priorities"
+                                    value="risk"
+                                    checked
+                                >
+                                <span>Risk & uncertainty</span>
+                            </label>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- ANALYSIS DEPTH -->
+
+                    <div class="form-group">
+
+                        <label for="analysis-depth">
+                            ANALYSIS DEPTH
+                        </label>
+
+                        <select id="analysis-depth" name="analysisDepth">
+
+                            <option value="balanced">
+                                Balanced — clear and thoughtful
+                            </option>
+
+                            <option value="quick">
+                                Quick — get to the point
+                            </option>
+
+                            <option value="deep">
+                                Deep — examine the details
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                    <!-- SUBMIT -->
+
+                    <button
+                        type="submit"
+                        id="analyze-button"
+                        class="primary-button"
+                    >
+
+                        <span>ANALYZE MY SITUATION</span>
+                        <span class="button-arrow">→</span>
+
+                    </button>
+
+                    <p class="form-disclaimer">
+                        Authority advises. You decide.
+                    </p>
+
+                </form>
+
+            </section>
+
+
+            <!-- ANALYSIS RESULTS -->
+
+            <section
+                id="results-section"
+                class="panel results-panel"
+                aria-live="polite"
+                hidden
+            >
+
+                <div class="panel-heading">
+
+                    <div>
+                        <span class="section-index">02 / ANALYSIS</span>
+                        <h2>Decision assessment</h2>
+                    </div>
+
+                    <span class="panel-icon">◎</span>
+
+                </div>
+
+
+                <div id="analysis-status" class="analysis-status">
+                    Awaiting analysis.
+                </div>
+
+
+                <!-- UNDERSTANDING -->
+
+                <div class="result-block">
+
+                    <h3>Situation assessment</h3>
+
+                    <p id="result-summary">
+                        Your situation will be assessed here.
+                    </p>
+
+                </div>
+
+
+                <!-- RECOMMENDATION -->
+
+                <div class="recommendation-card">
+
+                    <span class="result-label">
+                        RECOMMENDED COURSE OF ACTION
+                    </span>
+
+                    <h3 id="result-recommendation">
+                        No recommendation yet
+                    </h3>
+
+                    <p id="result-reason">
+                        Analyze your situation to explore your options.
+                    </p>
+
+                </div>
+
+
+                <!-- OPTION SCORES -->
+
+                <div class="result-block">
+
+                    <h3>Compare your options</h3>
+
+                    <p class="input-description">
+                        Scores should reflect the evidence and assumptions
+                        behind each option, not an objectively guaranteed
+                        chance of success.
+                    </p>
+
+                    <div id="option-results" class="option-results">
+
+                        <p class="empty-state">
+                            Your evaluated options will appear here.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <!-- EMOTIONAL & PRACTICAL ANALYSIS -->
+
+                <div class="result-block">
+
+                    <h3>Two perspectives</h3>
+
+                    <div class="perspective-grid">
+
+                        <article class="perspective-card">
+
+                            <span class="perspective-icon">♡</span>
+
+                            <h4>Emotional perspective</h4>
+
+                            <p id="result-emotional">
+                                Your feelings, needs, values, and
+                                possible emotional consequences.
+                            </p>
+
+                        </article>
+
+
+                        <article class="perspective-card">
+
+                            <span class="perspective-icon">⌘</span>
+
+                            <h4>Practical perspective</h4>
+
+                            <p id="result-practical">
+                                Feasibility, resources, risks,
+                                and likely consequences.
+                            </p>
+
+                        </article>
+
+                    </div>
+
+                </div>
+
+
+                <!-- BLIND SPOTS -->
+
+                <div class="result-block">
+
+                    <h3>What you might be missing</h3>
+
+                    <ul id="result-blind-spots" class="insight-list">
+
+                        <li>
+                            Important assumptions and overlooked factors
+                            will appear here.
+                        </li>
+
+                    </ul>
+
+                </div>
+
+
+                <!-- NEXT STEP -->
+
+                <div class="next-step-card">
+
+                    <span class="result-label">YOUR NEXT MOVE</span>
+
+                    <p id="result-next-step">
+                        A suggested next step will appear here.
+                    </p>
+
+                </div>
+
+
+                <!-- USER RETAINS CONTROL -->
+
+                <div class="results-actions">
+
+                    <button
+                        type="button"
+                        id="revise-button"
+                        class="secondary-button"
+                    >
+                        REVISE MY SITUATION
+                    </button>
+
+                    <button
+                        type="button"
+                        id="reset-button"
+                        class="text-button"
+                    >
+                        START OVER
+                    </button>
+
+                </div>
+
+                <p class="form-disclaimer">
+                    A recommendation is not a guarantee.
+                    Review the reasoning and make your own decision.
+                </p>
+
+            </section>
+
+
+            <!-- PRODUCT PRINCIPLES -->
+
+            <section class="principles-section">
+
+                <span class="section-index">SYSTEM PRINCIPLES</span>
+
+                <div class="principle">
+
+                    <span class="principle-number">01</span>
+
+                    <div>
+                        <h3>Understand before advising.</h3>
+
+                        <p>
+                            Context comes before conclusions.
+                        </p>
+                    </div>
+
+                </div>
+
+
+                <div class="principle">
+
+                    <span class="principle-number">02</span>
+
+                    <div>
+                        <h3>Balance reason with emotion.</h3>
+
+                        <p>
+                            A practical decision can still be
+                            emotionally costly, and vice versa.
+                        </p>
+                    </div>
+
+                </div>
+
+
+                <div class="principle">
+
+                    <span class="principle-number">03</span>
+
+                    <div>
+                        <h3>Explain the reasoning.</h3>
+
+                        <p>
+                            Recommendations should be understandable,
+                            challengeable, and open to revision.
+                        </p>
+                    </div>
+
+                </div>
+
+            </section>
+
+        </main>
+
+
+        <!-- FOOTER -->
+
+        <footer class="footer">
+
+            <div class="footer-brand">
+                AUTHORITY <span> / </span> PROJECT RE:ZERO
+            </div>
+
+            <p>
+                An experimental decision intelligence project.
+            </p>
+
+            <p class="footer-note">
+                Built to help you think, not think for you.
+            </p>
+
+        </footer>
+
+    </div>
+
+
+    <!-- APPLICATION LOGIC -->
+
+    <script src="script.js"></script>
+
+</body>
+</html>
